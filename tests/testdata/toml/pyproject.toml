@@ -1,0 +1,17 @@
+[project]
+name = "pipenv-uv-migration-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Yoshiyuki HINO", email = "yhinoz@gmail.com" }
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+pipenv-uv-migration-test = "pipenv_uv_migration_test:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,76 @@
+[project]
+name = "pipenv-uv-migrate"
+version = "0.1.0"
+description = "This is simple migration script, migrate pipenv to uv"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Yoshiyuki HINO", email = "yhinoz@gmail.com" },
+]
+dependencies = [
+    "packaging>=24.2",
+    "tomlkit>=0.13.2",
+    "typer>=0.14.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yhino/pipenv-uv-migrate"
+Repository = "https://github.com/yhino/pipenv-uv-migrate"
+
+[project.scripts]
+pipenv-uv-migrate = "pipenv_uv_migrate:__main__"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.ruff]
+target-version = "py38"
+src = ["pipenv_uv_migrate", "tests"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D",        # disabled temporary
+    "ANN",      # handled by mypy
+    "B008",     # do not perform function calls in argument defaults
+    "COM812",   # may cause conflicts when used with the formatter
+    "ISC001",   # may cause conflicts when used with the formatter
+]
+
+[tool.ruff.lint.per-file-ignores]
+"pipenv_uv_migrate/__main__.py" = [
+    "FBT",      # incompatible with typer
+    "FA100",    # https://github.com/tiangolo/typer/issues/348
+]
+"tests/*" = [
+    "D",        # disabled temporary
+    "S101",     # use assert in tests
+    "PLC1901",  # empty strings are falsey, but are less specific in tests
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+python_version = 3.8
+strict = true
+ignore_missing_imports = true
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+commit_parser = "emoji"
+
+[tool.semantic_release.branches.main]
+match = "main"
+prerelease = false
+
+[tool.semantic_release.commit_parser_options]
+major_tags = [":boom:"]
+minor_tags = [":sparkles:",":children_crossing:",":lipstick:",":iphone:",":egg:",":chart_with_upwards_trend:"]
+patch_tags = [":ambulance:",":lock:",":arrow_up:",":bug:",":zap:",":goal_net:",":alien:",":wheelchair:",":speech_balloon:",":mag:",":apple:",":penguin:",":checkered_flag:",":robot:",":green_apple:"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling:build"
