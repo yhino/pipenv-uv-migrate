@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -ue
 set -x
 
 uvx mypy .
