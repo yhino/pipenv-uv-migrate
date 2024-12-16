@@ -46,9 +46,9 @@ def main(
         typer.Option(
             "--re-migrate",
             help="""
-            re-migrate a dependency if it already exists in the poetry dependency.
-            however, if a dependency is removed from pipenv,
-            it does not remove the poetry dependency
+            re-migrate dependencies if they exist at the destination.
+            however, if a dependency is removed from the source,
+            it is not removed from the destination dependency.
         """,
         ),
     ] = False,
