@@ -68,6 +68,9 @@ ignore = [
     "PLC1901",  # empty strings are falsey, but are less specific in tests
 ]
 
+[tool.ruff.lint.isort]
+known-first-party = ["pipenv_uv_migrate"]
+
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
