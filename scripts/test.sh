@@ -3,4 +3,4 @@
 set -x
 
 export PYTHONPATH=.
-uvx --with pytest-cov pytest -vv --cov=pipenv_uv_migrate --cov-report=term ${@} tests
+uv run pytest -vv --cov=pipenv_uv_migrate --cov-report=term ${@} tests

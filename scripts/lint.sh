@@ -2,6 +2,6 @@
 
 set -x
 
-uvx mypy .
-uvx ruff check .
-uvx ruff format --check --diff .
+uv run mypy .
+uv run ruff check .
+uv run ruff format --check --diff .

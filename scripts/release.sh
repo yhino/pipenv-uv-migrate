@@ -4,7 +4,7 @@ set -ue
 set -x
 
 git fetch --prune
-NEW_VERSION=$(uvx semantic-release --strict -v version --print-tag)
+NEW_VERSION=$(uv run semantic-release --strict -v version --print-tag)
 EXIT_CODE=$?
 if [ ${EXIT_CODE} -eq 0 ]; then
 	git ci --allow-empty --message=":bookmark: ${NEW_VERSION}"
