@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -20,19 +21,27 @@ class MigrationOption:
 
 
 class PipenvUvMigration:
-    def __init__(self, pipfile: Path, pyproject_toml: Path, *, option: MigrationOption) -> None:
+    def __init__(
+        self,
+        pipfile: Path,
+        pyproject_toml: Path,
+        *,
+        option: MigrationOption,
+    ) -> None:
         self._pyproject_toml = pyproject_toml
         self._pipenv = load_pipfile(pipfile)
         self._pyproject = load_pyproject_toml(pyproject_toml)
 
         self._project = self._pyproject.get("project", table(is_super_table=True))
         self._pyproject["project"] = self._project
-        self._project_dependencies = self._project.get("dependencies", array()).multiline(True)
+        self._project_dependencies = self._project.get("dependencies", array())
+        self._project_dependencies = self._project_dependencies.multiline(True)  # noqa: FBT003
         self._project["dependencies"] = self._project_dependencies
 
         self._dependency_groups = self._pyproject.get("dependency-groups", table())
         self._pyproject["dependency-groups"] = self._dependency_groups
-        self._dependency_groups_dev = self._dependency_groups.get("dev", array()).multiline(True)
+        self._dependency_groups_dev = self._dependency_groups.get("dev", array())
+        self._dependency_groups_dev = self._dependency_groups_dev.multiline(True)  # noqa: FBT003
         self._dependency_groups["dev"] = self._dependency_groups_dev
 
         self._tool = self._pyproject.get("tool", table(is_super_table=True))
@@ -80,13 +89,13 @@ class PipenvUvMigration:
                         k = "branch"
                     t.add(k, formatted_properties["ref"])
                 if "editable" in formatted_properties:
-                    t.add("editable", True)
+                    t.add("editable", True)  # noqa: FBT003
                 self._tool_uv_sources.append(key(name), t)
             if "path" in formatted_properties:
                 t = inline_table()
                 t.add("path", formatted_properties["path"])
                 if "editable" in formatted_properties:
-                    t.add("editable", True)
+                    t.add("editable", True)  # noqa: FBT003
                 self._tool_uv_sources.append(key(name), t)
 
     def _migrate_dev_dependencies(self) -> None:
@@ -118,13 +127,13 @@ class PipenvUvMigration:
                         k = "branch"
                     t.add(k, formatted_properties["ref"])
                 if "editable" in formatted_properties:
-                    t.add("editable", True)
+                    t.add("editable", True)  # noqa: FBT003
                 self._tool_uv_sources.append(key(name), t)
             if "path" in formatted_properties:
                 t = inline_table()
                 t.add("path", formatted_properties["path"])
                 if "editable" in formatted_properties:
-                    t.add("editable", True)
+                    t.add("editable", True)  # noqa: FBT003
                 self._tool_uv_sources.append(key(name), t)
 
     def _migrate_scripts(self) -> None:
@@ -135,7 +144,8 @@ class PipenvUvMigration:
 
         warnings.warn(
             "uv does not have the feature of task runner."
-            " migration of the scripts section will be skipped."
+            " migration of the scripts section will be skipped.",
+            stacklevel=2,
         )
 
     def _migrate_source(self) -> None:
@@ -154,7 +164,7 @@ class PipenvUvMigration:
 
     def _save(self) -> None:
         if self._option.dry_run:
-            print(dumps(self._pyproject))
+            sys.stdout.write(dumps(self._pyproject))
         else:
             with Path(self._pyproject_toml).open("w") as f:
                 f.write(dumps(self._pyproject))
@@ -175,7 +185,7 @@ def reformat_dependency_properties(
     extras: str | None,
     properties: str | dict[str, Any],
 ) -> dict[str, Any]:
-    formatted = {}
+    formatted: dict[str, Any] = {}
     if extras is not None:
         formatted["extras"] = extras.split(",")
     if isinstance(properties, dict):
