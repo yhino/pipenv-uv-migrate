@@ -131,7 +131,7 @@ dev = [
 
 ### Test cases
 
-Test cases are in `tests/toml`, update `Pipfile` with additional entries and `expect_pyproject.toml` with expected output.
+Test cases are in `tests/testdata/toml`, update `Pipfile` with additional entries and `expect_pyproject.toml` with expected output.
 
 
 ## :pencil: License

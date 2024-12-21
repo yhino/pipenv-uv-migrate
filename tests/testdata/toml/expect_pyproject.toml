@@ -1,0 +1,39 @@
+[project]
+name = "pipenv-uv-migrate-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Yoshiyuki HINO", email = "yhinoz@gmail.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "uvicorn[standard]",
+    "celery[msgpack,redis]",
+    "pipenv-uv-migrate",
+    "flask[dev,dotenv]",
+    "numpy==1.24.4",
+]
+
+[project.scripts]
+pipenv-uv-migrate-test = "pipenv_uv_migrate_test:main"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=5.2",
+    "isort[pyproject]==4.3.21",
+    "werkzeug[watchdog]",
+]
+
+[tool.uv.sources]
+pipenv-uv-migrate = {git = "https://github.com/yhino/pipenv-uv-migrate.git", branch = "main"}
+flask = {git = "https://github.com/pallets/flask.git", tag = "1.1.1"}
+[[tool.uv.index]]
+name = "private"
+url = "https://example.com/simple"

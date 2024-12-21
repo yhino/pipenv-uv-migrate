@@ -56,6 +56,10 @@ class PipenvUvMigration:
 
         self._option = option
 
+    @property
+    def pyproject_toml(self) -> Path:
+        return self._pyproject_toml
+
     def migrate(self) -> None:
         self._migrate_dependencies()
         self._migrate_dev_dependencies()
