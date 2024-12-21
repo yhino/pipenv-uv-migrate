@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import re
 import sys
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
 from packaging.markers import Marker
 from packaging.requirements import Requirement
 from packaging.specifiers import SpecifierSet
-from tomlkit import aot, array, dumps, inline_table, key, nl, table
+from tomlkit import aot, array, dumps, inline_table, key, table
 from typing_extensions import Any
 
 from pipenv_uv_migrate.loader import load_pipfile, load_pyproject_toml
@@ -50,6 +51,8 @@ class PipenvUvMigration:
         self._tool["uv"] = self._tool_uv
         self._tool_uv_sources = self._tool_uv.get("sources", table())
         self._tool_uv["sources"] = self._tool_uv_sources
+        self._tool_uv_index = self._tool_uv.get("index", aot())
+        self._tool_uv["index"] = self._tool_uv_index
 
         self._option = option
 
@@ -77,6 +80,8 @@ class PipenvUvMigration:
             self._project_dependencies.append(r.__str__())
 
             if "index" in formatted_properties:
+                if formatted_properties["index"] == "pypi":
+                    continue
                 t = inline_table()
                 t.add("index", formatted_properties["index"])
                 self._tool_uv_sources.append(key(name), t)
@@ -89,7 +94,10 @@ class PipenvUvMigration:
                         k = "branch"
                     t.add(k, formatted_properties["ref"])
                 if "editable" in formatted_properties:
-                    t.add("editable", True)  # noqa: FBT003
+                    warnings.warn(
+                        f"cannot specify both `git` and `editable`; dependency={name}",
+                        stacklevel=1,
+                    )
                 self._tool_uv_sources.append(key(name), t)
             if "path" in formatted_properties:
                 t = inline_table()
@@ -127,7 +135,10 @@ class PipenvUvMigration:
                         k = "branch"
                     t.add(k, formatted_properties["ref"])
                 if "editable" in formatted_properties:
-                    t.add("editable", True)  # noqa: FBT003
+                    warnings.warn(
+                        f"cannot specify both `git` and `editable`; dependency={name}",
+                        stacklevel=1,
+                    )
                 self._tool_uv_sources.append(key(name), t)
             if "path" in formatted_properties:
                 t = inline_table()
@@ -139,9 +150,6 @@ class PipenvUvMigration:
     def _migrate_scripts(self) -> None:
         if "scripts" not in self._pipenv:
             return
-
-        import warnings
-
         warnings.warn(
             "uv does not have the feature of task runner."
             " migration of the scripts section will be skipped.",
@@ -156,11 +164,7 @@ class PipenvUvMigration:
             source = table()
             source.add("name", s["name"])
             source.add("url", s["url"])
-            source.add(nl())
-
-            if "index" not in self._pyproject:
-                self._tool_uv["index"] = aot()
-            self._tool_uv["index"].append(source)
+            self._tool_uv_index.append(source)
 
     def _save(self) -> None:
         if self._option.dry_run:

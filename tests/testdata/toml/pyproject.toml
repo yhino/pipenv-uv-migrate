@@ -1,5 +1,5 @@
 [project]
-name = "pipenv-uv-migration-test"
+name = "pipenv-uv-migrate-test"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -10,7 +10,7 @@ requires-python = ">=3.8"
 dependencies = []
 
 [project.scripts]
-pipenv-uv-migration-test = "pipenv_uv_migration_test:main"
+pipenv-uv-migrate-test = "pipenv_uv_migrate_test:main"
 
 [build-system]
 requires = ["hatchling"]
