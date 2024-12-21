@@ -112,7 +112,7 @@ dev = [
 ]
 ```
 
-> ![Note]  
+> [!Note]  
 > If the version of the dependent package is not specified, it will also be migrated. but the following warning will be displayed when lock or sync is performed with uv.
 >
 >     warning: Missing version constraint (e.g., a lower bound) for `requests`.
