@@ -4,7 +4,8 @@
 <p align="center">
     <a href="https://pypi.org/project/pipenv-uv-migrate/"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pipenv-uv-migrate"></a>
     <a href="https://pypi.org/project/pipenv-uv-migrate/"><img src="https://img.shields.io/pypi/dm/pipenv-uv-migrate" alt="PyPI - Downloads"></a>
-    <a href="https://github.com/yhino/pipenv-uv-migrate/actions/workflows/test.yml"><img src="https://github.com/yhino/pipenv-uv-migrate/actions/workflows/test.yml/badge.svg" alt="Test"></a>      <a href="https://codecov.io/gh/yhino/pipenv-uv-migrate"><img src="https://codecov.io/gh/yhino/pipenv-uv-migrate/branch/main/graph/badge.svg?token=LHZGQ8MMWT" alt="Codecov"></a>
+    <a href="https://github.com/yhino/pipenv-uv-migrate/actions/workflows/test.yml"><img src="https://github.com/yhino/pipenv-uv-migrate/actions/workflows/test.yml/badge.svg" alt="Test"></a>      
+    <a href="https://codecov.io/gh/yhino/pipenv-uv-migrate" ><img src="https://codecov.io/gh/yhino/pipenv-uv-migrate/graph/badge.svg?token=ZKkbXAb46g"/></a>
     <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fyhino%2Fpipenv-uv-migrate?ref=badge_shield"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyhino%2Fpipenv-uv-migrate.svg?type=shield" alt="FOSSA Status"></a>
 </p>
 
