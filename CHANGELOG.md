@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v0.1.1 (2024-12-23)
+
+### :bug:
+
+- :bug: fix script target of pipenv-uv-migrate
+  ([`4c41bf8`](https://github.com/yhino/pipenv-uv-migrate/commit/4c41bf8f05537c5d5e698792b51fe6aff9259c3d))
+
+### Other
+
+- :bookmark: v0.1.1
+  ([`d0fa7ce`](https://github.com/yhino/pipenv-uv-migrate/commit/d0fa7ce6a9e5490b2cbe20ebe5d6c2935b9825b3))
+
+
 ## v0.1.0 (2024-12-23)
 
 ### :bug:
