@@ -19,7 +19,7 @@ Homepage = "https://github.com/yhino/pipenv-uv-migrate"
 Repository = "https://github.com/yhino/pipenv-uv-migrate"
 
 [project.scripts]
-pipenv-uv-migrate = "pipenv_uv_migrate:__main__"
+pipenv-uv-migrate = "pipenv_uv_migrate.__main__:app"
 
 [dependency-groups]
 dev = [
