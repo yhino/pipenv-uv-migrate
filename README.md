@@ -13,6 +13,8 @@
 
 ### Installation
 
+    $ uv tool install pipenv-uv-migrate
+    # -- or --
     $ pipx install pipenv-uv-migrate
 
 ### Migration
