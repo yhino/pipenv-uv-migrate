@@ -3,7 +3,7 @@ name = "pipenv-uv-migrate"
 version = "0.1.1"
 description = "This is simple migration script, migrate pipenv to uv"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license = { file = "LICENSE" }
 authors = [
     { name = "Yoshiyuki HINO", email = "yhinoz@gmail.com" },
@@ -40,7 +40,7 @@ venvPath = "."
 venv = ".venv"
 
 [tool.ruff]
-target-version = "py38"
+target-version = "py39"
 src = ["pipenv_uv_migrate", "tests"]
 
 [tool.ruff.lint]
@@ -75,7 +75,7 @@ known-first-party = ["pipenv_uv_migrate"]
 convention = "google"
 
 [tool.mypy]
-python_version = 3.8
+python_version = 3.9
 strict = true
 ignore_missing_imports = true
 
