@@ -14,21 +14,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
-
       - name: Install uv
         uses: astral-sh/setup-uv@v5
-
+      - name: Create venv
+        run: uv venv
       - name: Install dependencies
-        run: uv sync --all-extras
-
+        run: uv pip install -U -r pyproject.toml --all-extras
       - name: Generate requirements.txt
         run: uv pip freeze > requirements.txt
-
       - name: Check for High Severity OSS Vulnerabilities
         uses: snyk/actions/python@master
         env:

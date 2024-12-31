@@ -21,8 +21,10 @@ jobs:
         python-version: '3.9'
     - name: Install uv
       uses: astral-sh/setup-uv@v5
+    - name: Create venv
+      run: uv venv
     - name: Install dependencies
-      run: uv sync --all-extras
+      run: uv pip install -U -r pyproject.toml --all-extras
     - name: Lint
       env:
         RUFF_OUTPUT_FORMAT: github
@@ -43,7 +45,7 @@ jobs:
     - name: Install uv
       uses: astral-sh/setup-uv@v5
     - name: Run Tox
-      run: uvx tox@latest -e py -- --with tox-uv
+      run: uvx --with tox-uv tox@latest -e py
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
       with:
