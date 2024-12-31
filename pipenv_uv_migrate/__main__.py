@@ -1,7 +1,7 @@
 from pathlib import Path
+from typing import Annotated
 
 import typer
-from typing_extensions import Annotated
 
 from pipenv_uv_migrate import __version__
 from pipenv_uv_migrate.loader import (

@@ -81,7 +81,7 @@ readme = "README.md"
 authors = [
     { name = "Yoshiyuki HINO", email = "yhinoz@gmail.com" }
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = []
 
 [build-system]
@@ -100,7 +100,7 @@ readme = "README.md"
 authors = [
     { name = "Yoshiyuki HINO", email = "yhinoz@gmail.com" }
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = [
     "requests",
 ]
