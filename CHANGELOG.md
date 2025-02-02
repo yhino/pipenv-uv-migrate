@@ -1,6 +1,24 @@
 # CHANGELOG
 
 
+## v0.2.1 (2025-02-02)
+
+### :arrow_up:
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#10](https://github.com/yhino/pipenv-uv-migrate/pull/10),
+  [`b496443`](https://github.com/yhino/pipenv-uv-migrate/commit/b496443d69654d028198fceab96869636c571cfb))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#9](https://github.com/yhino/pipenv-uv-migrate/pull/9),
+  [`c3f590d`](https://github.com/yhino/pipenv-uv-migrate/commit/c3f590da8157cc2641b800e0905cfe8fd7fa1a4e))
+
+### Other
+
+- :bookmark: v0.2.1
+  ([`8258a5d`](https://github.com/yhino/pipenv-uv-migrate/commit/8258a5db7ae751bc875321f993b021f7c1b61cb1))
+
+
 ## v0.2.0 (2025-01-01)
 
 ### :arrow_up:
