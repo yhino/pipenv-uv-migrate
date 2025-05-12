@@ -5,7 +5,10 @@ from typer.testing import CliRunner
 from pipenv_uv_migrate import __version__
 from pipenv_uv_migrate.__main__ import app
 
-runner = CliRunner(mix_stderr=False)
+try:
+    runner = CliRunner(mix_stderr=False)  # type: ignore[call-arg]
+except TypeError:
+    runner = CliRunner()
 
 
 def test_main(
