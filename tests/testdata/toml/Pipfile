@@ -1,12 +1,12 @@
 [[source]]
-url = "https://pypi.python.org/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
 [[source]]
-url = "https://example.com/simple"
+url = "https://download.pytorch.org/whl/cpu"
 verify_ssl = true
-name = "private"
+name = "pytorch-cpu"
 
 
 [packages]
@@ -16,6 +16,7 @@ requests = "*"
 pipenv-uv-migrate = {editable=true, git="https://github.com/yhino/pipenv-uv-migrate.git", ref="main"}
 "flask[dotenv,dev]" = {git = "https://github.com/pallets/flask.git", ref = "1.1.1"}
 numpy = "==1.24.4"
+torch = {version="*", index="pytorch-cpu"}
 
 [dev-packages]
 pytest = ">=5.2"

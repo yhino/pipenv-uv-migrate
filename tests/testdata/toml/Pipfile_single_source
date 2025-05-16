@@ -1,0 +1,13 @@
+# vim: filetype=toml
+
+[[source]]
+url = "https://pypi.private.example.org/simple"
+verify_ssl = true
+name = "private-pypi"
+
+
+[packages]
+requests = "*"
+numpy = "==1.24.4"
+
+[dev-packages]

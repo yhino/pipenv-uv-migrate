@@ -14,11 +14,11 @@ dependencies = [
     "pipenv-uv-migrate",
     "flask[dev,dotenv]",
     "numpy==1.24.4",
+    "torch"
 ]
 
 [project.scripts]
 pipenv-uv-migrate-test = "pipenv_uv_migrate_test:main"
-
 
 [build-system]
 requires = ["hatchling"]
@@ -34,6 +34,9 @@ dev = [
 [tool.uv.sources]
 pipenv-uv-migrate = {git = "https://github.com/yhino/pipenv-uv-migrate.git", branch = "main"}
 flask = {git = "https://github.com/pallets/flask.git", tag = "1.1.1"}
+torch = {index = "pytorch-cpu"}
+
 [[tool.uv.index]]
-name = "private"
-url = "https://example.com/simple"
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
