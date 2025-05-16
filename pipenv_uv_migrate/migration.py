@@ -5,6 +5,7 @@ import sys
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from packaging.markers import Marker
 from packaging.requirements import Requirement
@@ -13,6 +14,9 @@ from tomlkit import aot, array, dumps, inline_table, key, table
 from typing_extensions import Any
 
 from pipenv_uv_migrate.loader import load_pipfile, load_pyproject_toml
+
+if TYPE_CHECKING:
+    from tomlkit.items import AoT, Table
 
 
 @dataclass
@@ -65,6 +69,7 @@ class PipenvUvMigration:
         self._migrate_dev_dependencies()
         self._migrate_scripts()
         self._migrate_source()
+        self._cleanup()
         self._save()
 
     def _migrate_dependencies(self) -> None:
@@ -175,6 +180,21 @@ class PipenvUvMigration:
             if set_explicit:
                 source.add("explicit", True)  # noqa: FBT003
             self._tool_uv_index.append(source)
+
+    def _cleanup(self) -> None:
+        # remove empty dependency-groups
+        if len(self._dependency_groups_dev) < 1:
+            self._dependency_groups.pop("dev")
+        if len(self._dependency_groups) < 1:
+            self._pyproject.pop("dependency-groups")
+        # remove empty `tool.uv.*`
+        for section in ("sources", "index"):
+            if len(self._tool_uv[section]) < 1:
+                self._tool_uv.pop(section)
+        if len(self._tool_uv) < 1:
+            self._tool.pop("uv")
+        if len(self._tool) < 1:
+            self._pyproject.pop("tool")
 
     def _save(self) -> None:
         if self._option.dry_run:
