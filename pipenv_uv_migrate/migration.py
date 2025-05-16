@@ -161,13 +161,19 @@ class PipenvUvMigration:
         )
 
     def _migrate_source(self) -> None:
+        origin_sources = self._pipenv.get("source", aot())
+        set_explicit = False
+        if len(origin_sources) > 1 and has_pypi_source(origin_sources):
+            set_explicit = True
         for s in self._pipenv.get("source", aot()):
-            if s["name"] == "pypi":
+            if is_pypi_source(s):
                 continue
 
             source = table()
             source.add("name", s["name"])
             source.add("url", s["url"])
+            if set_explicit:
+                source.add("explicit", True)  # noqa: FBT003
             self._tool_uv_index.append(source)
 
     def _save(self) -> None:
@@ -176,6 +182,14 @@ class PipenvUvMigration:
         else:
             with Path(self._pyproject_toml).open("w") as f:
                 f.write(dumps(self._pyproject))
+
+
+def has_pypi_source(sources: AoT) -> bool:
+    return any(is_pypi_source(s) for s in sources)
+
+
+def is_pypi_source(source: Table) -> bool:
+    return bool(source["name"].unwrap() == "pypi")
 
 
 def split_extras(name: str) -> tuple[str, str | None]:
