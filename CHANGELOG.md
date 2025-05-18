@@ -1,6 +1,70 @@
 # CHANGELOG
 
 
+## v0.2.3 (2025-05-18)
+
+### :arrow_up:
+
+- :arrow_up: Bump astral-sh/setup-uv from 5 to 6
+  ([#15](https://github.com/yhino/pipenv-uv-migrate/pull/15),
+  [`80cfa4c`](https://github.com/yhino/pipenv-uv-migrate/commit/80cfa4c1c2d4dc82fa180e989423e55161b50ced))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#13](https://github.com/yhino/pipenv-uv-migrate/pull/13),
+  [`533324a`](https://github.com/yhino/pipenv-uv-migrate/commit/533324a0d5aa82336e8bde385623380b2c18f91c))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#17](https://github.com/yhino/pipenv-uv-migrate/pull/17),
+  [`c0ff50c`](https://github.com/yhino/pipenv-uv-migrate/commit/c0ff50c505c9772305f2eb16ddfb8725b0f31e9c))
+
+### :bug:
+
+- :bug: compatible with removal of CliRunner mix_stderr parameter in Click 8.2.0
+  ([#18](https://github.com/yhino/pipenv-uv-migrate/pull/18),
+  [`9f284da`](https://github.com/yhino/pipenv-uv-migrate/commit/9f284da3a0e1ea20518ffdd08519e510897816e7))
+
+* :bug: compatible with removal of CliRunner mix_stderr parameter in Click 8.2.0
+
+see https://github.com/pallets/click/releases/tag/8.2.0
+
+* :bug: run on old interface with python 3.9 only
+
+- :bug: fix misconfigured build-backend ([#19](https://github.com/yhino/pipenv-uv-migrate/pull/19),
+  [`69a2871`](https://github.com/yhino/pipenv-uv-migrate/commit/69a287134de9c28894b1c910de0989018fa719d7))
+
+- :bug: fix warning, run uv in tox ([#16](https://github.com/yhino/pipenv-uv-migrate/pull/16),
+  [`19dc5d4`](https://github.com/yhino/pipenv-uv-migrate/commit/19dc5d4ce3638352dd703dca3a1d4c53c44556c7))
+
+fix "warning: `VIRTUAL_ENV=.tox/py` does not match the project environment path `.venv` and will be
+  ignored"
+
+### Other
+
+- :bookmark: v0.2.3
+  ([`847eb31`](https://github.com/yhino/pipenv-uv-migrate/commit/847eb31e724acd61e7fd32e08f148126aade4b52))
+
+- Fix migration when multiple source exist, including pypi
+  ([#21](https://github.com/yhino/pipenv-uv-migrate/pull/21),
+  [`7c245ed`](https://github.com/yhino/pipenv-uv-migrate/commit/7c245ed62bf90f9def4fc8058484476e2fce471f))
+
+* :test_tube: update testdata
+
+* :bug: fix migration when multiple source exist, including pypi
+
+ref. https://docs.astral.sh/uv/configuration/indexes/#pinning-a-package-to-an-index
+
+* :white_check_mark: add migration test when single source exists
+
+* :bug: fix to not output empty sections
+
+- Fix test action ([#14](https://github.com/yhino/pipenv-uv-migrate/pull/14),
+  [`770124e`](https://github.com/yhino/pipenv-uv-migrate/commit/770124e3b64cf776e20893e2ec40fed2eb6fc1f9))
+
+* :construction_worker: run test on a schedule
+
+* :bug: fix warning from codecov
+
+
 ## v0.2.2 (2025-03-02)
 
 ### :arrow_up:

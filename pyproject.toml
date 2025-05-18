@@ -1,6 +1,6 @@
 [project]
 name = "pipenv-uv-migrate"
-version = "0.2.2"
+version = "0.2.3"
 description = "This is simple migration script, migrate pipenv to uv"
 readme = "README.md"
 requires-python = ">=3.9"
