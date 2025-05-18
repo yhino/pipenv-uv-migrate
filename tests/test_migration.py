@@ -23,6 +23,11 @@ def load_fixture(request: pytest.FixtureRequest) -> Callable[[str], Any]:
             "original_pyproject_toml",
             "expect_pyproject_toml",
         ),
+        (
+            "pipfile_single_source",
+            "original_pyproject_toml",
+            "expect_single_source_pyproject_toml",
+        ),
     ],
 )
 def test_migrate(
@@ -56,6 +61,11 @@ def test_migrate(
             "pipfile",
             "original_pyproject_toml",
             "expect_pyproject_toml",
+        ),
+        (
+            "pipfile_single_source",
+            "original_pyproject_toml",
+            "expect_single_source_pyproject_toml",
         ),
     ],
 )

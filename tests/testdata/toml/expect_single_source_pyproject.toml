@@ -1,0 +1,24 @@
+[project]
+name = "pipenv-uv-migrate-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Yoshiyuki HINO", email = "yhinoz@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests",
+    "numpy==1.24.4",
+]
+
+[project.scripts]
+pipenv-uv-migrate-test = "pipenv_uv_migrate_test:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[[tool.uv.index]]
+name = "private-pypi"
+url = "https://pypi.private.example.org/simple"
