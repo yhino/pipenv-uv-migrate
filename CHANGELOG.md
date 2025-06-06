@@ -1,5 +1,6 @@
 # CHANGELOG
 
+<!-- version list -->
 
 ## v0.2.3 (2025-05-18)
 
