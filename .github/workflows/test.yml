@@ -48,7 +48,7 @@ jobs:
     - name: Install uv
       uses: astral-sh/setup-uv@v6
     - name: Run Tox
-      run: uvx --with tox-uv tox@latest -e py
+      run: uvx --with pydantic>=2.12.0a1,tox-uv tox@latest -e py
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
       with:
