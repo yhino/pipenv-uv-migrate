@@ -2,6 +2,79 @@
 
 <!-- version list -->
 
+## v0.3.0 (2025-10-01)
+
+### :arrow_up:
+
+- :arrow_up: Bump actions/checkout from 4 to 5
+  ([#29](https://github.com/yhino/pipenv-uv-migrate/pull/29),
+  [`d9802d5`](https://github.com/yhino/pipenv-uv-migrate/commit/d9802d51901226daba1c7921460f748ce32eae19))
+
+- :arrow_up: Bump actions/setup-python from 5 to 6
+  ([#32](https://github.com/yhino/pipenv-uv-migrate/pull/32),
+  [`e31e311`](https://github.com/yhino/pipenv-uv-migrate/commit/e31e311167c2a4f22ec36b3ad9826a7314199cfa))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#33](https://github.com/yhino/pipenv-uv-migrate/pull/33),
+  [`412695b`](https://github.com/yhino/pipenv-uv-migrate/commit/412695ba5134816e7a0bd7254b64fb49d35e9ab3))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#31](https://github.com/yhino/pipenv-uv-migrate/pull/31),
+  [`0376724`](https://github.com/yhino/pipenv-uv-migrate/commit/0376724b3c50c0e40bfe5ca761715d228d41efc2))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#28](https://github.com/yhino/pipenv-uv-migrate/pull/28),
+  [`8627041`](https://github.com/yhino/pipenv-uv-migrate/commit/86270415f5ee9015fdd6cc594588283432552029))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#27](https://github.com/yhino/pipenv-uv-migrate/pull/27),
+  [`70a1f13`](https://github.com/yhino/pipenv-uv-migrate/commit/70a1f133990568d5df39178e759f1d1c304ac827))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#26](https://github.com/yhino/pipenv-uv-migrate/pull/26),
+  [`f2cb898`](https://github.com/yhino/pipenv-uv-migrate/commit/f2cb898fea04c666acfe8a5720dd05b0a5c8d6ee))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#25](https://github.com/yhino/pipenv-uv-migrate/pull/25),
+  [`629360a`](https://github.com/yhino/pipenv-uv-migrate/commit/629360ae00f3df38bbc21d5b43d53d053a69db49))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#22](https://github.com/yhino/pipenv-uv-migrate/pull/22),
+  [`0ae2746`](https://github.com/yhino/pipenv-uv-migrate/commit/0ae2746c9f3854c37aad79edeaca72f9ebf855d7))
+
+- :arrow_up: upgrade python-semantic-release
+  ([#23](https://github.com/yhino/pipenv-uv-migrate/pull/23),
+  [`332f1bf`](https://github.com/yhino/pipenv-uv-migrate/commit/332f1bfb377f230c36d2e3b195571e0ffe46f508))
+
+### :sparkles:
+
+- :sparkles: add insertion flag in changelog
+  ([#23](https://github.com/yhino/pipenv-uv-migrate/pull/23),
+  [`332f1bf`](https://github.com/yhino/pipenv-uv-migrate/commit/332f1bfb377f230c36d2e3b195571e0ffe46f508))
+
+### Other
+
+- :bookmark: v0.3.0
+  ([`a02389a`](https://github.com/yhino/pipenv-uv-migrate/commit/a02389a15b22c00c050ce4bbf81a9d7d8a4b76e1))
+
+- :fire: Python 3.9 EoL ([#30](https://github.com/yhino/pipenv-uv-migrate/pull/30),
+  [`611edba`](https://github.com/yhino/pipenv-uv-migrate/commit/611edbad4637aa3ea19c693120a1166f63411f8e))
+
+- :wrench: change `allow_zero_version` to true
+  ([#35](https://github.com/yhino/pipenv-uv-migrate/pull/35),
+  [`87a7d6c`](https://github.com/yhino/pipenv-uv-migrate/commit/87a7d6c5fff3a8ec4bd9a453eb7f0b6334796a85))
+
+- :wrench: change package-ecosystem to `uv` from `pip` in dependabot.yml
+  ([#24](https://github.com/yhino/pipenv-uv-migrate/pull/24),
+  [`04466aa`](https://github.com/yhino/pipenv-uv-migrate/commit/04466aa11f4e92cd167a57718755776f820de4e9))
+
+- Ci: add .deepsource.toml
+  ([`23e13cf`](https://github.com/yhino/pipenv-uv-migrate/commit/23e13cf174df7caa86bf6c7f39b5d4798e9ed7cb))
+
+- Support python semantic release v10 ([#23](https://github.com/yhino/pipenv-uv-migrate/pull/23),
+  [`332f1bf`](https://github.com/yhino/pipenv-uv-migrate/commit/332f1bfb377f230c36d2e3b195571e0ffe46f508))
+
+
 ## v0.2.3 (2025-05-18)
 
 ### :arrow_up:
