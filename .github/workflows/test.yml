@@ -22,7 +22,7 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install uv
-      uses: astral-sh/setup-uv@v6
+      uses: astral-sh/setup-uv@v7
     - name: Create venv
       run: uv venv
     - name: Install dependencies
@@ -46,7 +46,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
         allow-prereleases: true
     - name: Install uv
-      uses: astral-sh/setup-uv@v6
+      uses: astral-sh/setup-uv@v7
     - name: Run Tox
       run: uvx --with tox-uv tox@latest -e py
     - name: Upload coverage to Codecov
