@@ -2,6 +2,59 @@
 
 <!-- version list -->
 
+## v0.4.0 (2026-02-13)
+
+### :arrow_up:
+
+- :arrow_up: Bump actions/checkout from 5 to 6
+  ([#40](https://github.com/yhino/pipenv-uv-migrate/pull/40),
+  [`a0935d2`](https://github.com/yhino/pipenv-uv-migrate/commit/a0935d2c01ae8e6b7ad3379ba9400812f98e33f8))
+
+- :arrow_up: Bump astral-sh/setup-uv from 6 to 7
+  ([#37](https://github.com/yhino/pipenv-uv-migrate/pull/37),
+  [`7f5402f`](https://github.com/yhino/pipenv-uv-migrate/commit/7f5402f6e7debeaadd81e22193918e720e0fe413))
+
+- :arrow_up: Bump github/codeql-action from 3 to 4
+  ([#38](https://github.com/yhino/pipenv-uv-migrate/pull/38),
+  [`b34ba69`](https://github.com/yhino/pipenv-uv-migrate/commit/b34ba69744db97ead1a44aed87aa69e0093f3253))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#42](https://github.com/yhino/pipenv-uv-migrate/pull/42),
+  [`faaf311`](https://github.com/yhino/pipenv-uv-migrate/commit/faaf3119336d21dcc0205e02515403277b4b8b20))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#41](https://github.com/yhino/pipenv-uv-migrate/pull/41),
+  [`765cbe6`](https://github.com/yhino/pipenv-uv-migrate/commit/765cbe6511a7bb5ab575cb088271f4720b2f71ae))
+
+- :arrow_up: Bump python-semantic-release/python-semantic-release
+  ([#39](https://github.com/yhino/pipenv-uv-migrate/pull/39),
+  [`bfa7113`](https://github.com/yhino/pipenv-uv-migrate/commit/bfa71132b83dbfa98ec30757b30ebb448e17f4be))
+
+### :bug:
+
+- :bug: capture errors that occur in scripts
+  ([#46](https://github.com/yhino/pipenv-uv-migrate/pull/46),
+  [`75e2732`](https://github.com/yhino/pipenv-uv-migrate/commit/75e2732b935acc22ffd368a73a2a6637bff08e02))
+
+- :bug: fix to avoid using typing_extensions
+  ([#44](https://github.com/yhino/pipenv-uv-migrate/pull/44),
+  [`d353f87`](https://github.com/yhino/pipenv-uv-migrate/commit/d353f875a0e63214c9b0f8e6e3a8fd80cce868e9))
+
+### :sparkles:
+
+- :sparkles: support python 3.14 ([#45](https://github.com/yhino/pipenv-uv-migrate/pull/45),
+  [`55debea`](https://github.com/yhino/pipenv-uv-migrate/commit/55debeaad2bdd65ae33a57bd52e76e15b5fab8ab))
+
+### Other
+
+- :bookmark: v0.4.0
+  ([`021a408`](https://github.com/yhino/pipenv-uv-migrate/commit/021a408ed2d5cbf6b14467e0ea4f1256d2770c1d))
+
+- :white_check_mark: Add Python 3.14 to the testing
+  ([#34](https://github.com/yhino/pipenv-uv-migrate/pull/34),
+  [`2ebbd06`](https://github.com/yhino/pipenv-uv-migrate/commit/2ebbd0609c7b133b887ad891d06adc8eca99326f))
+
+
 ## v0.3.0 (2025-10-01)
 
 ### :arrow_up:
