@@ -125,9 +125,9 @@ dev = [
 ## :handshake: Contributing
 
 1. Fork and clone the repository, and create the development branch.
-2. Run `uv pip install -U -r pyproject.toml` to setup your develop environment.
+2. Run `uv sync` to setup your develop environment.
 3. Do your code.
-4. Run `bash scripts/test.sh` to check that your test passed.
+4. Run `uvx --with tox-uv tox@latest` to check that your test passed.
 5. Run `bash scripts/format.sh` and `bash scripts/lint.sh` to check that you haven't warnings.
 6. Open a PR on GitHub.
 
