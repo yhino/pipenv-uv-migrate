@@ -5,7 +5,7 @@ import sys
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from packaging.markers import Marker
 from packaging.requirements import Requirement
