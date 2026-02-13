@@ -5,13 +5,12 @@ import sys
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import Any, TYPE_CHECKING
 
 from packaging.markers import Marker
 from packaging.requirements import Requirement
 from packaging.specifiers import SpecifierSet
 from tomlkit import aot, array, dumps, inline_table, key, table
-from typing_extensions import Any
 
 from pipenv_uv_migrate.loader import load_pipfile, load_pyproject_toml
 
