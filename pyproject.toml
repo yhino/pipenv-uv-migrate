@@ -11,7 +11,7 @@ authors = [
 dependencies = [
     "packaging>=24.2",
     "tomlkit>=0.13.2",
-    "typer>=0.14.0",
+    "typer>=0.26.0",
 ]
 classifiers = [
     "License :: OSI Approved :: Apache Software License",
